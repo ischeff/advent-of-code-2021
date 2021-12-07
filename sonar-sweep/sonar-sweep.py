@@ -28,16 +28,24 @@
 #
 # To do this, count the number of times a depth measurement increases from the previous measurement. (There is no measurement before the first measurement.) In the example above, the changes are as follows:
 #
-# 199 (N/A - no previous measurement)
-# 200 (increased)
-# 208 (increased)
-# 210 (increased)
-# 200 (decreased)
+# 199 (N/A - no previous measurement) make a placeholder variable HERE - this is the current measurement
+# also, initialize a counter to zero - this will store the value of how many times a depth increases from previous measurement
+# 200 (increased) compare the next measurement to the current measurement - if the old one is smaller/current is bigger, increment the counter
+# 208 (increased) so this would increment
+# 210 (increased) and this would increment
+# 200 (decreased) this would NOT incrementt he counter (so the conditinoal would say if it's bigger, increment, otherwise go to the next one)
 # 207 (increased)
 # 240 (increased)
 # 269 (increased)
 # 260 (decreased)
 # 263 (increased)
 # In this example, there are 7 measurements that are larger than the previous measurement.
+
+# questions: since the list is 1000s of values long, what's the most efficient way to do this? Should I sort the list? Or wouldn't that defeat the whole purpose, since it represnts the ocean floor, and you can't order that?
 #
+# basic sketch of algo:
+    # in goes value
+    # if value is bigger than preious value
+        # increment counter
+    # otherwise, move on to next value / repeat algo 
 # How many measurements are larger than the previous measurement?
