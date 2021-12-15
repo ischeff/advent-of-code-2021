@@ -1,6 +1,13 @@
+import itertools
 with open('data.txt') as depths:
-    data = depths.read()
-    print(data)
+    # data = depths.read()
+    # print(data)
+    # prevDepth = depths[0]
+    # counter = 0
+    # currentDepth = 0
+    for line in itertools.islice(depths, 1, None):
+        print(line)
+
 
 # questions: since the list is 1000s of values long, what's the most efficient way to do this? Should I sort the list? Or wouldn't that defeat the whole purpose, since it represnts the ocean floor, and you can't order that?
 # also, how do I pass the data through this one at a time?
