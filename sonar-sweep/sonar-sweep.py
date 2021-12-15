@@ -14,4 +14,4 @@ with open('data.txt') as f:
         #     print("No, the current depth is not deeper")
         # print("The total number of times the depth has decreased is: " + str(counter))
         prevDepth = currentDepth
-    print("The depth has increased " + str(counter) + " times.")
+    print(f"The depth has increased {counter} times.")
