@@ -55,15 +55,26 @@ def sonar_sweep_part1_liner(depths):
 
 def sonar_sweep_part_two(depths):
     counter = 0
-    # for i in itertools.islice(depths, 1, len(depths)-3):
-    for i in zi[(depths)]
-        if depths[i] + depths[i + 1] + depths[i + 2] > depths[i - 1] + depths[i] + depths[i + 1]:
+    for i in range(3, len(depths)):
+        if depths[i] + depths[i-1] + depths[i-2] > depths[i-1] + depths[i-2] + depths[i-3]:
             counter += 1
     print(f"The sum of three consecutive depths has increased {counter} times.")
+    # sumOfConsecutiveDepths =  map(sum(depths, depths[1:], depths[2:]))
+    # print(sumOfConsecutiveDepths)
+    # # sumOfConsecutiveDepths = (left + middle + right) for left, middle, right in zip(depths, depths[1:], depths[2:]))
+    # # return sum(1 for (first, second) in zip(sumOfConsecutiveDepths, sumOfConsecutiveDepths[1:] if second > first)
+#     for prevDepth, currentDepth, nextDepth in zip(depths, itertools.islice(depths, 1, None), itertools.islice(depths, 2, None):
+#         sum = prevDepth + currentDepth + nextDepth
+#         return sum
+# def sonar_sweep_part_two_b(depths):
 
-        # check if sum is greater than previous group of three
-        # return something
-        # move to next group of three
+    #     if depths[i] + depths[i + 1] + depths[i + 2] > depths[i - 1] + depths[i] + depths[i + 1]:
+    #         counter += 1
+    # print(f"The sum of three consecutive depths has increased {counter} times.")
+    # #
+    # #     # check if sum is greater than previous group of three
+    # #     # return something
+    # #     # move to next group of three
 
 
 
