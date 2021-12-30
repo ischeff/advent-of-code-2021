@@ -51,8 +51,16 @@ def sonar_sweep_part1_comprehension(depths):
 def sonar_sweep_part1_liner(depths):
     return sum(1 for (left, right) in zip(depths, depths[1:]) if right > left)
 
-def sonar_sweep_part_two_draft(depths):
-    # for each group of three
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+def sonar_sweep_part_two(depths):
+    counter = 0
+    # for i in itertools.islice(depths, 1, len(depths)-3):
+    for i in zi[(depths)]
+        if depths[i] + depths[i + 1] + depths[i + 2] > depths[i - 1] + depths[i] + depths[i + 1]:
+            counter += 1
+    print(f"The sum of three consecutive depths has increased {counter} times.")
+
         # check if sum is greater than previous group of three
         # return something
         # move to next group of three
@@ -65,3 +73,4 @@ if __name__ == "__main__":
     sonar_sweep_part1_zip(load_input('data.txt'))
     sonar_sweep_part1_comprehension(load_input('data.txt'))
     print(sonar_sweep_part1_liner(load_input('data.txt')))
+    sonar_sweep_part_two(load_input('data.txt'))
