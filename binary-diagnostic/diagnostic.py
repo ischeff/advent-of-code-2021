@@ -21,10 +21,10 @@ def part_one_b(sums, report):
     gamma = "" # most common bit
     epsilon = "" # least common bit
     for i in range(len(sums)):
-        if sums[i] > len(report)/2:
+        if sums[i] > len(report)/2: # 1 is most common
             gamma += "1"
             epsilon += "0"
-        else:
+        else: # 0 is most common
             gamma += "0"
             epsilon += "1"
     return int(gamma, 2) * int(epsilon, 2)
@@ -33,22 +33,29 @@ def part_one_b(sums, report):
 # maybe make oxygen an empty list and CO2 an empty list
 # try using a list comprehension to filter report -
 
-def part_two(sums, report):
-    oxygen = []
-    c02 = []
-    for i in range(len(report)):
-        line = report[i]
-        for j in range(len(line)):
-            if sums[j] >= len(report)/2 and line[j] == "1":#1 is most common number so add 1s to oxygen
-                oxygen.append(line)
-            elif sums[j] < len(report)/2 and line[j] == "0": #0 is most common number so add 0s to oxygen
-                oxygen.append(line)
-            elif sums[j] >= len(report)/2 and line[j] == "0": #1 is most common number so add 0s to co2
-                c02.append(line)
-            elif sums[j] < len(report)/2 and line[j] == "1": #0 is most common number so add 1s to co2
-                c02.append(line)
-    return oxygen, co2
+def test(report, x):
+    print(report[x])
+    line = report[x]
+    for bit in line:
+        print(bit)
 
+    #     line = report[i]
+    #     for j in line:
+    #         print line[j]
+    # print(report[x][1])
+# def part_two(sums, report):
+#     oxygen = [x for x in report] # most common bit
+#     carbon_dioxide = [x for x in report] # least common bit
+#     for i in range(len(sums)):
+#         # line_oxygen = oxygen[i]
+#         # line_carbon_dioxide = carbon_dioxide[i]
+#         if sums[i] >= len(report)/2: # 1 is most common
+#             oxygen = [x for x in oxygen if oxygen[i] == "1"]
+#             carbon_dioxide = [x for x in carbon_dioxide if carbon_dioxide[i] == "0"]
+#         else: # 0 is most common
+#             oxygen = [x for x in oxygen if oxygen[i] == "0"]
+#             carbon_dioxide = [x for x in carbon_dioxide if carbon_dioxide[i] == "1"]
+#     return oxygen, carbon_dioxide
 
 # def part_two(sums, report):
 #     # make two copies of report (one for oxygen and one for C02)
@@ -81,4 +88,5 @@ if __name__ == "__main__":
     # print(len(load_input("data.txt")))
     print(part_one_a(load_input("data.txt")))
     print(part_one_b(part_one_a(load_input("data.txt")), load_input("data.txt")))
-    print(part_two(part_one_a(load_input("data.txt")), load_input("data.txt")))
+    # print(part_two(part_one_a(load_input("data.txt")), load_input("data.txt")))
+    test(load_input("data.txt"), 2)
