@@ -15,7 +15,7 @@ def part_one_a(report):
     return sums
 # since the len of the report is 1000 lines, if the sum is less than 500,
 # the majority of the bits in that column are 0s and vice versa
-# Note: I'm gambling that there is not an even number of 1s and 0s in each position
+# Note: I'm gambling that there is not an equal number of 1s and 0s in each position
 # since the rules don't say anything about tiebreakers!
 def part_one_b(sums, report):
     gamma = "" # most common bit
@@ -29,12 +29,7 @@ def part_one_b(sums, report):
             epsilon += "1"
     return int(gamma, 2) * int(epsilon, 2)
 
-
-# for each line, check the value of each bit
-# if the bit is one, increment a counter for ones
-# else (if the bit is zero), increment a counter for zeroes?
-# compare the total number of zeroes in each bit to the number of ones,
-# whichever is bigger gets put in an array/list of the appropriate length
+# sketch of part 2 
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
