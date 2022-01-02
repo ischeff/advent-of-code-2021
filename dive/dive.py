@@ -1,6 +1,6 @@
 def load_input(data):
     with open(data) as f:
-        course = f.readlines()
+        course = [str(i) for i in f]
         return course
 
 #~~~~~~~~~~~~~~~~~~~~~ naive solutions ~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -9,9 +9,15 @@ def part_one(course):
     x = 0
     y = 0
     for line in course:
-        direction, magnitude = course.split()
+        direction, magnitude = line.split()
         magnitude = int(magnitude)
-        if direction.startswith() == "f":
+        if direction.startswith("f"):
+            x += magnitude
+        elif direction.startswith("d"):
+            y += magnitude
+        else:
+            y -= magnitude
+    return x * y
 
 
 # get the input
@@ -30,4 +36,5 @@ def part_one(course):
 # assign variable to product of final coordinates
 
 if __name__ == "__main__":
-    print(load_input("data.txt"))
+    # print(load_input("data.txt"))
+    print(part_one(load_input("data.txt")))
