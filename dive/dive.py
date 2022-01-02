@@ -19,6 +19,24 @@ def part_one(course):
             y -= magnitude
     return x * y
 
+def part_two(course):
+    x = 0
+    y = 0
+    aim = 0
+    for line in course:
+        direction, magnitude = line.split()
+        magnitude = int(magnitude)
+        if direction.startswith("f"):
+            x += magnitude
+            y += magnitude * aim
+        elif direction.startswith("d"):
+            aim += magnitude
+        else:
+            aim -= magnitude
+    return x * y
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
 
 # get the input
 # how should you process it?
@@ -38,3 +56,4 @@ def part_one(course):
 if __name__ == "__main__":
     # print(load_input("data.txt"))
     print(part_one(load_input("data.txt")))
+    print(part_two(load_input("data.txt")))
