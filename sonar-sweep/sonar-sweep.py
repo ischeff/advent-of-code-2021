@@ -35,7 +35,7 @@ def sonar_sweep_part_two_zip(depths):
             counter += 1
     print(f"The sum of three consecutive depths has increased {counter} times.")
 
-#~~~~~~~~~~ solutions using list comprehension ~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~ solutions using list comprehension/zip ~~~~~~~~~~~~~~~~~#
 
 def sonar_sweep_part_one_comprehension(depths):
     depthIncreases = [1 for (left, right) in zip(depths, depths[1:]) if right > left]
