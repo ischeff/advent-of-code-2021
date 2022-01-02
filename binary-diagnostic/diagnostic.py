@@ -29,7 +29,23 @@ def part_one_b(sums, report):
             epsilon += "1"
     return int(gamma, 2) * int(epsilon, 2)
 
-# sketch of part 2 
+# sketch of part 2
+# maybe make oxygen an empty list and CO2 an empty list
+# try using a list comprehension to filter report -
+
+def part_two(sums, report):
+    # make two copies of report (one for oxygen and one for C02)
+    #if the sum for a given position is > 500
+        # then remove ANY item in oxygen list that does NOT have a 1 at that position
+        # then remove ANY item in CO2 that does NOT have a 0 at that position
+    #if the sum for a given position is <500
+        # then remove ANY item in list that does NOT have a 0 at that position
+        # then remove ANY item in CO2 that does NOT have a 1 at that position
+    # if the sum for a given position equals 500
+        # then remove ANY item in list that does NOT have a 1 at that position
+        # then remove ANY item in CO2 that does NOT have a 0 at that position
+    # return int(oxygen, 2) * int(C02, 2)
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
