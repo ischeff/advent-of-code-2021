@@ -1,6 +1,6 @@
 def load_input(data):
     with open(data) as f:
-        course = [str(i) for i in f]
+        course = f.readlines()
         return course
 
 #~~~~~~~~~~~~~~~~~~~~~ naive solutions ~~~~~~~~~~~~~~~~~~~~~~~~~~#
